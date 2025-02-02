@@ -1,0 +1,55 @@
+.contenedor_prinsipal{
+    width: 350px;
+    height: 400px;
+    border: 1px solid black;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.tituloPizza{
+    color: black;
+    margin-top: 10px;
+}
+.cardPizza{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.fotoPizza{
+    width: 100%;
+    height: 50%
+}
+.cajaIngredientes{
+    text-align: center;
+    margin-top: 5px;
+    height: 50px;
+    margin-bottom: 5px;
+    
+}
+.parrafoIngredientes{
+    margin-bottom: 1px;
+   
+}
+hr{
+    margin: 0;
+}
+.cajaPrecio{
+    text-align: center;
+}
+.cajaBotones{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 20px;
+}
+.btnVer{
+   background-color: white;
+   color: black;
+   border-radius: 10%;
+
+}
+.btnAñadir{
+background-color: black;
+   color: white;
+   border-radius: 10%;
+}

@@ -1,0 +1,36 @@
+.imgFondo{
+  
+    background-image: url(./assets/img/Header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    
+    color: white;
+  align-items: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;    
+  
+  align-items: center;
+  justify-content: center;
+
+
+}
+.tituloPizza{
+  color: white;
+  filter: brightness(1);
+}
+.letra_titulo{
+  color: white;
+ margin-top: 5px;
+  margin-bottom: 5px;
+}
+.botonBlanco{
+  margin-left: 10px;
+}
+.botonNegro{
+  margin-left: 1200px;
+}
+
