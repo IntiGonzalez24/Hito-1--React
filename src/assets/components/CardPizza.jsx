@@ -18,7 +18,7 @@ const CardPizza = ({img, name, price, ingredients}) => {
                 <div className="cajaIngredientes">
 
                
-                <p className="parrafoIngredientes">Ingredients</p>
+                <p className="parrafoIngredientes">Ingredientes</p>
                 <p>🍕{ingredients}</p>
                 </div>
                 <hr />
