@@ -2,9 +2,9 @@
 
 const Footer = () => {
   return (
-    <div>
-      <h3>Hola soy el footer</h3>
-    </div>
+    <div className="footer">
+    <h6>© 2021 - Pizzería Mamma Mía Todos los derechos reservados</h6>
+</div>
   )
 }
 
