@@ -1,5 +1,6 @@
 import Footer from "./assets/components/Footer"
 import Home from "./assets/components/Home"
+import LoginPage from "./assets/components/LoginPage"
 import Navbar from "./assets/components/Navbar"
 import Register from "./assets/components/Register"
 
@@ -9,7 +10,8 @@ const App = () => {
     <>
    <Navbar />
    {/*<Home />*/}
-   <Register />
+   {/*<Register />*/}
+   <LoginPage />
    <Footer />
    </>
   )
