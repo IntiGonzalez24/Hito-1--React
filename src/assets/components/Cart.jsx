@@ -1,35 +1,96 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { pizzaCart } from "../../data/pizzas"
 
 const Cart = () => {
+    const [cart,setCart] = useState(pizzaCart)
+    const calcularTotal = () =>{
+        let total =0;
+        cart.forEach((item)=>{
+            total += item.price * item.count
+        })
+        return total
+    }
+
+    const aumentarCantidad = (id) =>{
+        const nuevoCart = cart.map((item) =>{
+            if(item.id === id){
+                return { 
+                    ...item,
+                    count: item.count +1,
+                }
+                   
+                
+            }
+            return item
+        })
+        setCart(nuevoCart)
+
+    }
+
+    const disminuirCantidad = (id) =>{
+        const nuevoCartMenos = cart.map((item)=>{
+            if(item.id === id){
+                return {
+                    ...item,
+                    count: item.count -1,
+                    
+                }
+            }
+            if(item.count <0){
+                alert("No puede ser menor a 0")
+
+            }
+            return item
+        })
+        setCart(nuevoCartMenos)
+    }
   return (
     <div className='container mt-5'>
         <h2 className='text-center mb-4'>Carrito de compras</h2>
-        <div className='card mb-3'>
-            <div className='row g-0'>
-                <div className='col-md-4'>
-                    <img className='img-fluid rounded-start' src="" alt="" style={{height:"200px",objectFit:"cover"}} />
+        {cart.map((item)=>(
+             <div className='card mb-3' key={item.id}>
+             <div className='row g-0'>
+                 <div className='col-md-4'>
+                     <img className='img-fluid rounded-start' src={item.img} alt={item.name} style={{height:"200px",objectFit:"cover"}} />
+ 
+                 </div>
+                 <div className='col-md-8'>
+                     <div className='card-body'>
+                         <h5 className='card-title text-capitalize'>{item.name}</h5>
+                         <p className='card-text'>precio: ${item.price}</p>
+                         <div className='d-flex align-items-center gap-2'>
+                             <button className='btn btn-outline-danger' onClick={()=>disminuirCantidad(item.id)} >
+                                 -
+ 
+                             </button>
+                             <span>{item.count}</span>
+                             <button className='btn btn-outline-success' onClick={()=>aumentarCantidad(item.id)} >
 
-                </div>
-                <div className='col-md-8'>
-                    <div className='card-body'>
-                        <h5 className='card-title text-capitalize'>Nombre del item</h5>
-                        <p className='card-text'>precio:</p>
-                        <div className='d-flex align-items-center gap-2'>
-                            <button className='btn btn-outline-danger' >
-                                -
+                                 +
+ 
+                             </button>
+                         </div>
+                     </div>
+                 </div>
+ 
+             </div>
+         </div>
 
-                            </button>
-                            <span>cantidad</span>
-                            <button className='btn btn-outline-success' >
-                                +
-
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        ))}
+        
+            <div className='botonComprar'>
+            <button className='btn btn-dark '>Pagar</button>
+            <h3 className='totalCompra'>Total: ${calcularTotal()}</h3>
 
             </div>
-        </div>
+           
+            
+
+      
+      
+
+       
+       
       
     </div>
   )

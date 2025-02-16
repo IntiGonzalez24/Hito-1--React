@@ -4,7 +4,7 @@ import { pizzas } from "../../data/pizzas"
 import "./CardPizza.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.min.js' 
-import Cart from "./Cart"
+
 
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
 
     </div>
 
-    <Cart />
+    
     
 
     
