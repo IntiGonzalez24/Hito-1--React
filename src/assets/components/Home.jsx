@@ -1,19 +1,47 @@
 import CardPizza from "./CardPizza"
 import Header from "./Header"
-import { pizzas } from "../../data/pizzas"
+
 import "./CardPizza.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.min.js' 
+import React, {useEffect,useState} from "react"
 
 
 
 const Home = () => {
+  const [pizzas,setPizzas] = useState([]);
+  const [error, setError] = useState(null)
+  useEffect (()=>{
+    fetchPizzas()
+  },[])
+  
+  const fetchPizzas = async () =>{
+
+    try {
+      const res = await fetch('http://localhost:5000/api/pizzas/')
+      if (!res.ok) {
+          throw new Error('Error al cargar la pizza')
+      }
+      const data = await res.json()
+      setPizzas(data)
+  } catch (error) {
+      setError(error.message)
+  }
+    
+  }
+
+  
   return (
     <>
     <Header />
     <div className="container mt-5 pt-4">
       <h1 className="text-center mb-4">Pizzas</h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
+        
+    
+       
+      
+      
       {pizzas.map((pizza) =>(
         <CardPizza key={pizza.id}
         name={pizza.name}
