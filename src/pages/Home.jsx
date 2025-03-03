@@ -1,7 +1,8 @@
-import CardPizza from "./CardPizza"
-import Header from "./Header"
+import CardPizza from "../assets/components/CardPizza"
+import Header from "../assets/components/Header"
+import Footer from "../assets/components/Footer"
 
-import "./CardPizza.css"
+
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.min.js' 
 import React, {useEffect,useState} from "react"
@@ -85,7 +86,7 @@ ac54-90f6c31eb3e3"/>*/}
     
     
    
-    
+
     </>
   
   )
