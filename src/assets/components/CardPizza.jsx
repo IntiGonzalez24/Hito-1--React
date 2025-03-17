@@ -2,10 +2,19 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.min.js' 
 import "./CardPizza.css"
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 
 
 
-const CardPizza = ({name,img,price,ingredients,desc}) => {
+const CardPizza = ({id,name,img,price,ingredients,desc}) => {
+  
+  const navigate=useNavigate();
+
+  const irAPizza =(id) =>{
+    
+    navigate(`/pizzas/${id}`)
+}
   
   return (
     <div className="card h-100">
@@ -27,6 +36,7 @@ const CardPizza = ({name,img,price,ingredients,desc}) => {
       </div>
       <div className="card-footer d-flex justify-content-between align-items-center">
         <span className="fw-bold">Precio:  ${price}</span>
+        <button onClick={() => irAPizza(id)}>Ver mas 👀</button>
         <button className="btn btn-primary">
           añadir al carro
         </button>

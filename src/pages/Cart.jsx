@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { pizzaCart } from "../data/pizzas"
+import { userContext } from '../context/UserContext'
 
 const Cart = () => {
+    const {token} =useContext(userContext);
     const [cart,setCart] = useState(pizzaCart)
     const calcularTotal = () =>{
         let total =0;
@@ -79,7 +81,7 @@ const Cart = () => {
         ))}
         
             <div className='botonComprar'>
-            <button className='btn btn-dark '>Pagar</button>
+            <button className='btn btn-primary ' disabled={!token}>Pagar</button>
             <h3 className='totalCompra'>Total: ${calcularTotal()}</h3>
 
             </div>

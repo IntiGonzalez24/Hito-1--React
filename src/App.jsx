@@ -9,11 +9,14 @@ import {Route, Routes} from "react-router-dom";
 
 import NotFound from "./pages/NotFound"
 import Profile from "./assets/components/Profile"
+import UserProvider from "./context/UserContext"
+import LoginContext from "./context/LoginContext"
 
 
 const App = () => {
   return (
     <>
+    <UserProvider>
    <Navbar2 />
    <Routes>
     <Route path="/" element={<Home/>} />
@@ -21,9 +24,15 @@ const App = () => {
     <Route path="/login" element={<LoginPage/>} />
     <Route path="/cart" element={<Cart />} />
     <Route path="/*" element={<NotFound />} />
-    <Route path="/pizza/p001" element={<Pizza />} />
-    <Route path="profile" element={<Profile />} />
+    <Route path="/pizzas/:id" element={<Pizza />} />
+    <Route path="profile" element={
+      <LoginContext>
+<Profile />
+      </LoginContext>
+      
+      } />
    </Routes>
+   </UserProvider>
    
    
    

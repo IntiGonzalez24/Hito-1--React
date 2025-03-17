@@ -44,7 +44,7 @@ const Home = () => {
       
       
       {pizzas.map((pizza) =>(
-        <CardPizza key={pizza.id}
+        <CardPizza id={pizza.id}
         name={pizza.name}
         img={pizza.img}
         desc={pizza.desc}

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.min.js' 
+import { useParams } from 'react-router-dom'
 
 
 const Pizza = () => {
+    const {id} = useParams();
    const [pizza, setPizza] = useState(null)
    const [loading, setLoading] = useState(true)
    const [error, setError] = useState(null)
@@ -11,7 +13,7 @@ const Pizza = () => {
    useEffect(() => {
        const fetchPizza = async () => {
            try {
-               const response = await fetch('http://localhost:5000/api/pizzas/p001')
+               const response = await fetch(`http://localhost:5000/api/pizzas/${id}`)
                if (!response.ok) {
                    throw new Error('Error al cargar la pizza')
                }

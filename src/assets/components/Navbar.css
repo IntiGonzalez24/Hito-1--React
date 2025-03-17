@@ -1,0 +1,10 @@
+.menuItem{
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+
+}
+.menuItem.active{
+color: red;
+margin-left: 15px;
+}
