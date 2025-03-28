@@ -1,10 +1,20 @@
 import React, { useContext, useState } from 'react'
 import { pizzaCart } from "../data/pizzas"
 import { userContext } from '../context/UserContext'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
-    const {token} =useContext(userContext);
+    const {tokenBoton,logoutBoton} =useContext(userContext);
     const [cart,setCart] = useState(pizzaCart)
+
+    const handleClick=() =>{
+        Swal.fire({
+            title: "Gracias por su compra",
+            text: "El pedido esta siendo preparado",
+            icon: "success"
+          });
+
+    }   
     const calcularTotal = () =>{
         let total =0;
         cart.forEach((item)=>{
@@ -81,7 +91,7 @@ const Cart = () => {
         ))}
         
             <div className='botonComprar'>
-            <button className='btn btn-primary ' disabled={!token}>Pagar</button>
+            <button className='btn btn-primary ' onClick={handleClick}  disabled={!tokenBoton}>Pagar</button>
             <h3 className='totalCompra'>Total: ${calcularTotal()}</h3>
 
             </div>

@@ -34,6 +34,11 @@ const Navbar2 = () => {
         Login
           </button>
         </NavLink>
+        <NavLink to="/register" className="text-white ms-3 text-decoration-none" >
+        <button className="btn btn-dark">
+        Register
+          </button>
+        </NavLink>
         <div className="profile">
         <NavLink to="/profile" className="text-white ms-3 text-decoration-none" >
         Usuario 😀
